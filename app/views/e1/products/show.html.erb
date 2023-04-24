@@ -1,0 +1,16 @@
+<div class="max-w-xl mx-auto">
+  <div class="flex justify-between text-xl font-medium text-gray-900">
+    <span><%= @product.name %></span>
+    <span><%= @product.price %></span>
+  </div>
+  <div class="mt-5">
+    <span class="text-gray-900 font-base">Description</span>
+    <span class="block mt-2 text-gray-500">
+      <%= turbo_frame_tag :product_description do %>
+        <%= link_to edit_e1_product_description_path(@product) do %>
+          <%= @product.description || 'No description' %>
+        <% end %>
+      <% end %>
+    </span>
+  </div>
+</div>

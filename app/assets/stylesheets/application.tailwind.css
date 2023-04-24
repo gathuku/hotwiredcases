@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
 
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply px-4 py-2 text-white bg-red-500 rounded-lg;
   }
 }
 
-*/

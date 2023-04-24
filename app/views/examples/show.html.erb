@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">Inline Edit</h1>
+  </div>
+  <%= turbo_frame_tag :example_content do %>
+    <div class="flex justify-end">
+      <% if params[:code] %>
+        <%= link_to "Preview", example_path(1), data: {turbo_frame: :example_content}, class: "btn-primary" %>
+      <% else %>
+        <%= link_to "Code", example_path(1, code: true), data: {turbo_frame: :example_content}, class: "btn-primary" %>
+      <% end %>
+    </div>
+    <div class="mt-3">
+      <% if params[:code] %>
+        <span>Code</span>
+      <% else %>
+        <iframe src="/e1/products/98" frameborder="1" class="w-full border border-gray-300 h-96"></iframe>
+      <% end %>
+    </div>
+  <% end %>
+</div>
