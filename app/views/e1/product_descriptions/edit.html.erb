@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :product_description do %>
   <%= form_with(model: @product, url: e1_product_description_path(@product), data: { turbo_frame: "_top"}) do |form |%>
-    <%= form.text_area :description, onfocusout: "this.form.requestSubmit()", class: "w-full border-gray-300 rounded-lg" %>
+    <%= form.text_area :description, onfocusout: "this.form.requestSubmit()", class: "w-full border-gray-300 rounded-lg", rows: 5 %>
   <% end %>
 <% end %>
