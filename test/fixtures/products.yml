@@ -1,11 +1,8 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
-  desription: MyText
+  name: Heavy Duty Cotton Wallet
+  description: Est fugiat quaerat. Sequi quia hic
   price: 9.99
-
 two:
-  name: MyString
-  desription: MyText
+  name: Small Marble Keyboard
+  description: Dolorem ad vel. Accusamus quidem corporis.
   price: 9.99
