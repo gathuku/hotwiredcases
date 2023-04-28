@@ -29,14 +29,18 @@ The description text is inside a turbo frame `<turbo_frame id="product_descripti
 
 <%= turbo_frame_tag :product_description do %>
   <%= form_with(model: @product, url: product_description_path(@product), data: { turbo_frame: "_top"}) do |form |%>
-    <%= form.text_area :description, onfocusout: "this.form.requestSubmit()", class: "w-full border-gray-300 rounded-lg" %>
+    <%= form.text_area :description, autofocus: true, class: "w-full border-gray-300 rounded-lg", rows: 5 %>
+    <div class="mt-2 space-x-3">
+      <%= form.submit "Save", class: "bg-gray-300 rounded-md px-2 py-1.5" %>
+      <%= link_to "Cancel", product_path(@product), class: "text-blue-600" %>
+    </div>
   <% end %>
 <% end %>
 ```
 
-The response is wrapped with a frame with a matching id of the request container. This will replace the frame with new content which is a form with a text area to edit the description. 
+The response is wrapped with a frame with a matching id of the request container. This will replace the frame with new content which is a form with a text area to edit the description.
 
-The text area field submits the form on focus out event to `product_description_path(@product)`. This goes to the controller `update` action that updates the product record and redirects back to the product show page.
+When the save button is clicked the form is submitted. This goes to the controller `update` action that updates the product record and redirects back to the product show page.
 
 
 ```rb

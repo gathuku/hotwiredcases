@@ -1,5 +1,9 @@
 <%= turbo_frame_tag :product_description do %>
   <%= form_with(model: @product, url: e1_product_description_path(@product), data: { turbo_frame: "_top"}) do |form |%>
-    <%= form.text_area :description, onfocusout: "this.form.requestSubmit()", class: "w-full border-gray-300 rounded-lg", rows: 5 %>
+    <%= form.text_area :description, autofocus: true, class: "w-full border-gray-300 rounded-lg", rows: 5 %>
+    <div class="mt-2 space-x-3">
+      <%= form.submit "Save", class: "bg-gray-600 text-white rounded-md px-2 py-1.5 hover:opacity-50" %>
+      <%= link_to "Cancel", e1_product_path(@product) , class: "text-blue-600" %>
+    </div>
   <% end %>
 <% end %>
