@@ -1,0 +1,25 @@
+<%= turbo_frame_tag :modal do %>
+  <div class="fixed inset-0 z-50 p-2" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 transition-opacity bg-gray-400 bg-opacity-75" aria-hidden="true"></div>
+    <div class="relative flex items-center justify-center h-full">
+      <div data-modal-target="content" class="w-full max-w-sm max-h-screen px-5 py-3 overflow-auto bg-white rounded-lg md:max-w-lg">
+        <%# modal content %>
+        <span class="my-3 text-lg font-semibold">New product</span>
+        <%= form_with(url: "#") do |form| %>
+          <div>
+            <%= form.label :product_name %>
+            <%= form.text_field :product_name, class: "w-full" %>
+          </div>
+          <div class="mt-3">
+            <%= form.label :cost %>
+            <%= form.number_field :cost, class: "w-full" %>
+          </div>
+          <div class="flex justify-between mt-3">
+            <%= form.submit "Save", class: "px-4 py-1.5 text-white bg-gray-500 rounded-lg" %>
+            <%= link_to "Close", e2_products_path, data: { turbo_frame: "_top" }, class: "hover:opacity-50" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,6 +1,4 @@
-class E1::ProductsController < ApplicationController
-  layout "example"
-  
+class E1::ProductsController < ExampleController
   def show
     @product = Product.last
   end

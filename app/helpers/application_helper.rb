@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def markdown
-    content = File.read("app/views/e1/README.md")
+  def markdown(example)
+    content = File.read("app/views/#{example.namespace}/README.md")
     extensions = {
       fenced_code_blocks: true
     }
