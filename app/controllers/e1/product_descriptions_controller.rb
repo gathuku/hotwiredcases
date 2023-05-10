@@ -1,6 +1,4 @@
-class E1::ProductDescriptionsController < ApplicationController
-  layout "example"
-
+class E1::ProductDescriptionsController < ExampleController
   before_action :set_product
 
   def edit; end
