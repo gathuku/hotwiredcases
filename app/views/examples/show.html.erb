@@ -22,7 +22,7 @@
         </article>
       <% else %>
         <div class="rounded-md shadow-md">
-          <iframe src="/e2/products" frameborder="1" class="w-full border border-gray-100" height="600"></iframe>
+          <iframe src="<%= format_src_path(@example.src_path) %>" frameborder="1" class="w-full border border-gray-100" height="600"></iframe>
         </div>
       <% end %>
     </div>

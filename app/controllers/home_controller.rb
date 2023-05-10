@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index 
-    @examples = Example.all
+    @examples = Example.order(:created_at)
   end
 end

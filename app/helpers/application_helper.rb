@@ -1,4 +1,14 @@
 module ApplicationHelper
+  def format_src_path(path)
+    return if path.blank?
+
+    if path.match?(/:product_id/)
+      path.gsub(/:product_id/, Product.last.id.to_s)
+    else
+      path
+    end
+  end
+
   def markdown(example)
     content = File.read("app/views/#{example.namespace}/README.md")
     extensions = {
