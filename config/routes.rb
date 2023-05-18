@@ -14,4 +14,9 @@ Rails.application.routes.draw do
     # Modal
     resources :products, only: [:index, :new]
   end
+
+  namespace :e3 do
+    # Typehead searching
+    resources :products, only: [:index]
+  end
 end
