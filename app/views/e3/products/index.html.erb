@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <%= form_with(url: e3_products_path, method: :get, data: { turbo_frame: :products })  do |form| %>
+      <%= form.text_field :query, placeholder: "Search product by name", oninput: "this.form.requestSubmit()", class: "w-full" %>
+    <% end %>
+  </div>
+  <%= turbo_frame_tag :products do %>
+    <div class="mt-3 space-y-3 divide-y">
+      <%= render partial: "product", collection: @products %>
+    </div>
+  <% end %>
+</div>
