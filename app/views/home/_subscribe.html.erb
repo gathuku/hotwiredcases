@@ -6,7 +6,7 @@
         <%= form.email_field :email, placeholder: "Enter your email", class: "rounded-md border-gray-300"  %>
         <%= form.submit "Subscribe me", class: "px-3 py-2 bg-red-700 rounded-md text-white hover:opacity-50" %>
       </div>
-      <span class="text-left text-red-400"><%= subscriber.errors.messages_for(:email).to_sentence %></span>
+      <span class="text-left text-red-400"><%= subscriber.errors.full_messages_for(:email).to_sentence %></span>
     <% end %>
   </div>
 </div>
