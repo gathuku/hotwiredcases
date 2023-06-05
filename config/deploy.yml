@@ -6,7 +6,7 @@ image: gathuku/hotwiredcases
 
 # Deploy to these servers.
 servers:
-  - 134.209.87.235
+  - 167.71.62.22
 
 # Credentials for your image host.
 registry:
@@ -24,6 +24,7 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - POSTGRES_PASSWORD
 
 # Call a broadcast command on deploys.
 # audit_broadcast_cmd:
@@ -44,27 +45,26 @@ env:
 #     host: ssh://app@192.168.0.1
 
 # Use accessory services (secrets come from .env).
-# accessories:
-#   db:
-#     image: mysql:8.0
-#     host: 192.168.0.2
-#     port: 3306
-#     env:
-#       clear:
-#         MYSQL_ROOT_HOST: '%'
-#       secret:
-#         - MYSQL_ROOT_PASSWORD
-#     files:
-#       - config/mysql/production.cnf:/etc/mysql/my.cnf
-#       - db/production.sql.erb:/docker-entrypoint-initdb.d/setup.sql
-#     directories:
-#       - data:/var/lib/mysql
-#   redis:
-#     image: redis:7.0
-#     host: 192.168.0.2
-#     port: 6379
-#     directories:
-#       - data:/data
+accessories:
+  db:
+    image: postgres:15
+    host: 167.71.62.22
+    port: 5432
+    env:
+      clear:
+        POSTGRES_USER: 'user_hotwiredexamples'
+        POSTGRES_DB: 'db_hotwiredexamples'
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7.0
+    host: 192.168.0.2
+    port: 6379
+    directories:
+      - data:/data
 
 # Configure custom arguments for Traefik
 # traefik:

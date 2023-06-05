@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: hotwiredexamples_production
-  username: hotwiredexamples
-  password: <%= ENV["HOTWIREDEXAMPLES_DATABASE_PASSWORD"] %>
+  database: db_hotwiredexamples
+  username: user_hotwiredexamples
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
