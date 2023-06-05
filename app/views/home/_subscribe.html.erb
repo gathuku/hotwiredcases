@@ -1,0 +1,12 @@
+<div class="text-center" id="subscribe">
+  <h2 class="text-3xl font-bold tracking-tight text-red-700">Get notified when a new example is added</h2>
+  <div class="mt-6">
+    <%= form_with(model: subscriber) do |form| %>
+      <div class="flex justify-center space-x-3">
+        <%= form.email_field :email, placeholder: "Enter your email", class: "rounded-md border-gray-300"  %>
+        <%= form.submit "Subscribe me", class: "px-3 py-2 bg-red-700 rounded-md text-white hover:opacity-50" %>
+      </div>
+      <span class="text-left text-red-400"><%= subscriber.errors.messages_for(:email).to_sentence %></span>
+    <% end %>
+  </div>
+</div>
