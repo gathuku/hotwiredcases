@@ -76,7 +76,3 @@ end
 
 gem "faker"
 gem "redcarpet"
-
-gem "mrsk", "~> 0.12.1"
-
-gem "dockerfile-rails", ">= 1.4", :group => :development
