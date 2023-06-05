@@ -20,7 +20,7 @@ FROM base as build
 
 # Install packages need to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install -y build-essential curl default-libmysqlclient-dev git libpq-dev libvips node-gyp pkg-config python-is-python3
+    apt-get install -y build-essential curl default-libmysqlclient-dev git libpq-dev libvips pkg-config python-is-python3
 
 # Install JavaScript dependencies
 # ARG NODE_VERSION=19.7.0
