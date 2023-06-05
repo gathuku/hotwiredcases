@@ -76,3 +76,5 @@ end
 
 gem "faker"
 gem "redcarpet"
+
+gem "mrsk", "~> 0.12.1"
