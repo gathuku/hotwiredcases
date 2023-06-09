@@ -1,24 +1,32 @@
-# README
+## Hotwired cases
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A collection of cases where you can apply Hotwire in your Rails applications.
 
-Things you may want to cover:
+### Setup
 
-* Ruby version
+__Requirements__
 
-* System dependencies
+- Ruby 3.1.2
+- Postgresql
+- Foreman
 
-* Configuration
+__Run app__
 
-* Database creation
+Setup with 
+```
+bin/setup
+```
 
-* Database initialization
+Seed database with
 
-* How to run the test suite
+```
+rails db:seed 
+or 
+rails db:seed:replant
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Start the server and build assets
 
-* Deployment instructions
-
-* ...
+```
+bin/dev
+```
