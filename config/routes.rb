@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :examples
-  resources :subscribers, only: [:show, :create]
+  resources :subscribers, only: [:create] do
+    collection do
+      get 'confirmations', action: :confirm, as: :confirmation
+    end
+  end
 
   namespace :e1 do
     # Enline Edit
