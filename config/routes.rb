@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :examples
-  resources :subscribers, only: [:create]
+  resources :subscribers, only: [:show, :create]
 
   namespace :e1 do
     # Enline Edit
