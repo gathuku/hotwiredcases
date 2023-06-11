@@ -63,6 +63,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "hotwiredexamples_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { api_token: Rails.application.credentials.postmark_api_token }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
