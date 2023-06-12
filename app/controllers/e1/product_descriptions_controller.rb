@@ -4,9 +4,12 @@ class E1::ProductDescriptionsController < ExampleController
   def edit; end
 
   def update 
+    if @product.valid?
     @product.update!(product_params)
-
     redirect_to e1_product_path(@product)
+    else
+      render :edit
+    end
   end
 
   private
