@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :examples
   resources :subscribers, only: [:create] do
     collection do
-      get 'confirmations', action: :confirm, as: :confirmation
+      get 'confirmations', action: :show, as: :confirmation, controller: 'subscribers/confirmations'
     end
   end
 

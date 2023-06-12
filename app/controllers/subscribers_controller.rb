@@ -1,11 +1,4 @@
 class SubscribersController < ApplicationController
-  before_action :set_subscriber, only: :confirm
-
-  def confirm
-    @subscriber.confirm!
-    redirect_to root_path, notice: "Thank you for verifying your email address"
-  end
-
   def create
     subscriber = Subscriber.new(subscriber_params)
 
@@ -21,11 +14,5 @@ class SubscribersController < ApplicationController
 
   def subscriber_params
     params.require(:subscriber).permit(:email)
-  end
-
-  def set_subscriber
-    token = EmailConfirmationToken.find_signed!(params[:sid]); @subscriber = token.subscriber
-  rescue StandardError
-    redirect_to root_path, alert: "That email verification link is invalid"
   end
 end
