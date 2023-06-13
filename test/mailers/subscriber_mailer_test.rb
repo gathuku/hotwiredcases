@@ -12,9 +12,9 @@ class SubscriberMailerTest < ActionMailer::TestCase
       mail.deliver_later
     end
 
-    assert_equal "Confirm your subscription", mail.subject
-    assert_equal ["from@example.com"], mail.from
-    assert_equal [@subscriber.email], mail.to
+    assert_equal "Hotwiredcases: confirm your subscription", mail.subject
+    assert_equal ["hey@gathuku.me"], mail.from
+    assert_equal ["hey@example.com"], mail.to
     assert_match "Yes, use this email.", mail.body.encoded
   end
 end

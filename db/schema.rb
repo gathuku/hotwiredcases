@@ -14,11 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_183457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "email_confirmation_tokens", force: :cascade do |t|
-    t.bigint "subscriber_id", null: false
-    t.index ["subscriber_id"], name: "index_email_confirmation_tokens_on_subscriber_id"
-  end
-
   create_table "examples", force: :cascade do |t|
     t.string "name"
     t.string "namespace"
@@ -43,5 +38,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_183457) do
     t.datetime "confirmed_at"
   end
 
-  add_foreign_key "email_confirmation_tokens", "subscribers"
 end

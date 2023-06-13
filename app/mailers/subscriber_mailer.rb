@@ -1,8 +1,8 @@
 class SubscriberMailer < ApplicationMailer
   def email_confirmation
     @subscriber = params[:subscriber]
-    @signed_id = @subscriber.email_confirmation_tokens.create.signed_id(expires_in: 2.days)
+    @signed_id = @subscriber.to_sgid(expires_in: 2.days)
 
-    mail to: @subscriber.email, subject: "Confirm your subscription"
+    mail to: @subscriber.email, subject: "Hotwiredcases: confirm your subscription"
   end
 end
