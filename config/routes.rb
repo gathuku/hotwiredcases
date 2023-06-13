@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 
   resources :examples
   resources :subscribers, only: [:create] do
-    collection do
-      get 'confirmations', action: :show, as: :confirmation, controller: 'subscribers/confirmations'
-    end
+    resource :confirmation, only: [:show], controller: :subscriber_confirmations
   end
 
   namespace :e1 do

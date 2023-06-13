@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Subscriber::ConfirmationsControllerTest < ActionDispatch::IntegrationTest
+class SubscriberConfirmationsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @subscriber = subscribers(:one)
   end
@@ -8,7 +8,7 @@ class Subscriber::ConfirmationsControllerTest < ActionDispatch::IntegrationTest
   test "confirm: should confirm email" do
     sid = @subscriber.email_confirmation_tokens.create.signed_id(expires_in: 2.days)
 
-    get confirmation_subscribers_path(sid: sid)
+    get subscriber_confirmation_path(@subscriber, sid: sid)
 
     assert_redirected_to root_url
     assert_equal true, @subscriber.reload.confirmed?
@@ -17,7 +17,7 @@ class Subscriber::ConfirmationsControllerTest < ActionDispatch::IntegrationTest
   test "confirm: should not confirm email with expired token" do
     sid_exp = @subscriber.email_confirmation_tokens.create.signed_id(expires_in: 0.minutes)
 
-    get confirmation_subscribers_path(sid: sid_exp, id: @subscriber.id)
+    get subscriber_confirmation_path(@subscriber, sid: sid_exp)
 
     assert_redirected_to root_path
     assert_equal "That email verification link is invalid", flash[:alert]

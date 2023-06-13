@@ -1,4 +1,4 @@
-class Subscribers::ConfirmationsController < ApplicationController
+class SubscriberConfirmationsController < ApplicationController
   before_action :set_subscriber, only: :show
 
   def show
