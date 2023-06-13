@@ -1,4 +1,4 @@
 <p>Hi,</p>
 <p>You are about to confirm that <%= @subscriber.email %> is subscribing to Hotwired Cases newsletter!</p>
 <p>Please hit the link below to confirm your subscription.</p>
-<p><%= link_to "Yes, use this email.", subscriber_confirmation_url(@signed_id.to_s) %></p>
+<p><%= link_to "Yes, use this email.", subscriber_confirmation_url(@signed_id.to_s), target: "_blank" %></p>
