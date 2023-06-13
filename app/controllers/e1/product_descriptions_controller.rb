@@ -9,6 +9,7 @@ class E1::ProductDescriptionsController < ExampleController
     redirect_to e1_product_path(@product)
     else
       render :edit
+      end
   end
 
   private
