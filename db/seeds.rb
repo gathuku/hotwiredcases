@@ -8,3 +8,9 @@
     }
   )
 end
+
+50.times do
+  order = Order.new
+  order.items << LineItem.new(order: order, product: Product.last)
+  order.save!
+end

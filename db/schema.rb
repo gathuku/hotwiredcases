@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_11_183457) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_19_114717) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_183457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "src_path"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -38,4 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_183457) do
     t.datetime "confirmed_at"
   end
 
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "products"
 end
