@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   namespace :e4 do
     # Lazy loading
-    resources :products, only: [:index]
+    resources :products, only: [:show] do
+      resources :orders, only: [:index], controller: :product_orders
+    end
   end
 end

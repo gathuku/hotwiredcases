@@ -1,5 +1,5 @@
-class E4::ProductsController < ApplicationController
+class E4::ProductsController < ExampleController
   def show
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:id])
   end
 end
