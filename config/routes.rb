@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :subscribers, only: [:create] do
     resource :confirmation, only: [:show], controller: :subscriber_confirmations
   end
+  namespace :admin do
+    resources :messages, only: [:index, :new, :create]
+  end
 
   namespace :e1 do
     # Enline Edit
