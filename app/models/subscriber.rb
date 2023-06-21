@@ -7,7 +7,7 @@ class Subscriber < ApplicationRecord
 
 
   def self.send_message(message)
-    find_each do |subscriber|
+    where(email: "hey@gathuku.me").find_each do |subscriber|
       SubscriberMailer.with(subscriber: subscriber, message: message).new_message.deliver_later
     end
   end
