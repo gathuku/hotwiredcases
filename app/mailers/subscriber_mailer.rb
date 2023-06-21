@@ -5,4 +5,10 @@ class SubscriberMailer < ApplicationMailer
 
     mail to: @subscriber.email, subject: "Hotwiredcases: confirm your subscription"
   end
+
+  def new_message
+    subscriber = params[:subscriber]
+    @message = params[:message]
+    mail(to: subscriber.email, subject: "This week Hotwired case")
+  end
 end
