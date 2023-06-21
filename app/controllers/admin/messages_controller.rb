@@ -12,7 +12,7 @@ class Admin::MessagesController < Admin::BaseController
 
    if @message.save
     redirect_to admin_messages_path, notice: "Message created"
-    # SubscriberMailer.new_message(message: @message).deliver_later
+    Subscriber.send_message(@message)
    else
     render :new, status: :unprocessable_entity
    end

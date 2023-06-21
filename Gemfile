@@ -80,3 +80,4 @@ end
 
 gem "faker"
 gem "redcarpet"
+gem "sidekiq"
