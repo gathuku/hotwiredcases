@@ -1,0 +1,4 @@
+one:
+  record: one (SubscriberMessage)
+  name: content
+  body: <p>In a <i>million</i> stars!</p>

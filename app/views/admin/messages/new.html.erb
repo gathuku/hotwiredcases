@@ -1,0 +1,10 @@
+<%= form_with(model: @message, url: admin_messages_path) do |form| %>
+  <div>
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+  </div>
+  <div class="mt-3">
+    <%= form.submit class: "btn-primary" %>
+    <%= link_to "Cancel", admin_messages_path %>
+  </div>
+<% end %>

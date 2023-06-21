@@ -4,4 +4,10 @@ class SubscriberMailerPreview < ActionMailer::Preview
     subscriber = Subscriber.first
     SubscriberMailer.with(subscriber:).email_confirmation
   end
+
+  def new_message
+    message = SubscriberMessage.last
+    subscriber = Subscriber.first
+    SubscriberMailer.with(message: message, subscriber: subscriber).new_message
+  end
 end
