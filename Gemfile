@@ -81,3 +81,5 @@ end
 gem "faker"
 gem "redcarpet"
 gem "sidekiq"
+
+gem "honeybadger", "~> 5.2"
