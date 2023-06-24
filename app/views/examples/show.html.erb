@@ -7,7 +7,7 @@
   <div>
     <h1 class="text-3xl font-extrabold tracking-tight text-gray-900"><%= @example.name %></h1>
   </div>
-  <%= turbo_frame_tag :example_content do %>
+  <%= turbo_frame_tag :example_content, class: "block mb-8" do %>
     <div class="flex justify-end">
       <% if params[:code] %>
         <%= link_to "Preview", example_path(@example), data: {turbo_frame: :example_content}, class: "btn-primary" %>
