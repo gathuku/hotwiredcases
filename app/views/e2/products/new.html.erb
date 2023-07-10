@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :modal do %>
-  <div class="fixed inset-0 z-50 p-2" role="dialog" aria-modal="true">
+  <dialog class="fixed inset-0 z-50 p-2" open>
     <div class="fixed inset-0 transition-opacity bg-gray-400 bg-opacity-75" aria-hidden="true"></div>
     <div class="relative flex items-center justify-center h-full">
       <div data-modal-target="content" class="w-full max-w-sm max-h-screen px-5 py-3 overflow-auto bg-white rounded-lg md:max-w-lg">
@@ -21,5 +21,5 @@
         <% end %>
       </div>
     </div>
-  </div>
+  </dialog>
 <% end %>
