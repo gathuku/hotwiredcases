@@ -14,7 +14,7 @@
             <%= form.label :cost %>
             <%= form.number_field :cost, class: "w-full" %>
           </div>
-          <div class="flex justify-between mt-3">
+          <div class="flex justify-between items-center mt-3">
             <%= form.submit "Save", disabled: true, class: "px-4 py-1.5 text-white bg-gray-500 rounded-lg" %>
             <%= link_to "Close", e2_products_path, data: { turbo_frame: "_top" }, class: "hover:opacity-50" %>
           </div>
