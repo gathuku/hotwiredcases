@@ -145,6 +145,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
+    pagy (6.0.4)
     pg (1.4.6)
     postmark (1.23.0)
       json
@@ -260,6 +261,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   letter_opener
+  pagy
   pg (~> 1.1)
   postmark-rails
   puma (~> 5.0)

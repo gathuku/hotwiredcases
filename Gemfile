@@ -83,3 +83,4 @@ gem "redcarpet"
 gem "sidekiq"
 
 gem "honeybadger", "~> 5.2"
+gem "pagy"
