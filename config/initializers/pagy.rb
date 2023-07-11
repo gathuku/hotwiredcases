@@ -1,0 +1,2 @@
+require "pagy/extras/countless"
+

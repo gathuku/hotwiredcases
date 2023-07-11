@@ -42,4 +42,9 @@ Rails.application.routes.draw do
       resources :orders, only: [:index], controller: :product_orders
     end
   end
+
+  namespace :e5 do
+    # Infinite scroll
+    resources :products, only: [:index]
+  end
 end

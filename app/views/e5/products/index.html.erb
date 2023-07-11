@@ -1,0 +1,12 @@
+  <span class="text-sm italic text-yellow-500">Scroll down the page to see how it works</span>
+<h3 class="mb-3 text-lg font-bold">Products</h3>
+<div class="space-y-3 divide-y">
+  <%= turbo_frame_tag "products_#{@pagy.page}" do %>
+    <%= render @products %>
+    <% unless @pagy.page == @pagy.pages %>
+      <%= turbo_frame_tag "products_#{@pagy.next}", src: e5_products_path(page: @pagy.next), loading: "lazy" do %>
+        <div class="my-3 font-bold text-center text-red-300">Loading ...</div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
