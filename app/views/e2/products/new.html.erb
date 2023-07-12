@@ -16,7 +16,7 @@
           </div>
           <div class="flex justify-between items-center mt-3">
             <%= form.submit "Save", disabled: true, class: "px-4 py-1.5 text-white bg-gray-500 rounded-lg" %>
-            <%= link_to "Close", e2_products_path, data: { turbo_frame: "_top" }, class: "hover:opacity-50" %>
+            <button class="px-4 py-1.5 text-red-600 font-semibold rounded-lg hover:opacity-50" value="close" formmethod="dialog">Close</button>
           </div>
         <% end %>
       </div>
