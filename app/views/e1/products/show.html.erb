@@ -8,7 +8,7 @@
     <span class="text-gray-900 font-base">Description</span>
     <span class="block mt-2 text-gray-500">
       <%= turbo_frame_tag :product_description do %>
-        <%= link_to edit_e1_product_description_path(@product), class: "text-blue-500" do %>
+        <%= link_to edit_e1_product_description_path(@product), class: "cursor-text" do %>
           <%= @product.description || 'No description' %>
         <% end %>
       <% end %>
