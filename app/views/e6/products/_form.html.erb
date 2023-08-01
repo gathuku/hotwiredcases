@@ -1,0 +1,19 @@
+<%= form_with(
+    model: product,
+    url: e6_product_path(product),
+    data: {
+      controller: :form,
+      action: "turbo:before-render@document->form#beforeRender turbo:submit-start->form#submitStart turbo:submit-end->form#submitEnd"
+    }
+
+  ) do |form| %>
+  <div>
+    <%= form.label :available_on, class: "block" %>
+    <%= form.date_field :created_at, oninput: "this.form.requestSubmit()", class: "w-full" %>
+  </div>
+  <div class="mt-3">
+    <%= form.label :price, class: "block" %>
+    <%= form.number_field :price, oninput: "this.form.requestSubmit()", class: "w-full" %>
+  </div>
+  <span data-form-target="hint" class="mt-3 text-green-400"></span>
+<% end %>
