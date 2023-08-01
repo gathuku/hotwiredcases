@@ -47,4 +47,9 @@ Rails.application.routes.draw do
     # Infinite scroll
     resources :products, only: [:index]
   end
+
+  namespace :e6 do
+    # Turbo-drive form activity
+    resources :products, only: [:edit, :update]
+  end
 end
