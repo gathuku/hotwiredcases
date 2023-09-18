@@ -1,0 +1,27 @@
+<%= form_with(model: [:e7, order], class: "my-3") do |form| %>
+  <%= turbo_frame_tag :items_attributes do %>
+    <% form.object.items.each_with_index do |item, index| %>
+      <%= form.fields :items_attributes, model: item, index: index do |f| %>
+        <fieldset class="flex items-center my-3 space-x-3">
+          <div>
+            <%= f.collection_select :product_id, Product.all, :id, :name, {prompt: true}, class: "" %>
+          </div>
+          <div>
+            <%= f.text_field :quantity %>
+          </div>
+          <div>
+            <%= f.button :_destroy, value: true, formaction: new_e7_order_path,  formmethod: "get", data: { turbo_frame: :items_attributes}, class: "text-sm text-red-600" do %>
+              Remove
+            <% end %>
+          </div>
+        </fieldset>
+      <% end %>
+    <% end %>
+    <%= form.fields :items_attributes, index: form.object.items.size do |f| %>
+      <%= f.button :_destroy, value: false, formaction: new_e7_order_path,  formmethod: "get", data: { turbo_frame: :items_attributes}, class: "text-sm text-blue-600 font-bold" do %>
+        Add item
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= form.submit disabled: true, class: "px-3 py-2 rounded-md bg-gray-600 text-white block mt-3" %>
+<% end %>
