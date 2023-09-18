@@ -75,6 +75,6 @@ class OrdersController < ExampleController
   end
 end
 
-``
+```
 
 To take advantage of turbo we wrap item attributes and `Add new` button inside a `<turbo_frame>` and target it with `Add new` and `Remove` get request, this way only that part of the page is reloaded.
