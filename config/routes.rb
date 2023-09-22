@@ -52,4 +52,9 @@ Rails.application.routes.draw do
     # Turbo-drive form activity
     resources :products, only: [:edit, :update]
   end
+
+  namespace :e7 do
+    # Turbo-frame nested attributes
+    resources :orders, only: [:new, :create]
+  end
 end
