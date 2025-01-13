@@ -1,4 +1,4 @@
 <div class="flex items-center justify-between pt-3">
-  <span><%= product.name %></span>
+  <span><%= highlight product.name, params[:query] %></span>
   <span class="font-semibold"><%= number_to_currency product.price %></span>
 </div>
