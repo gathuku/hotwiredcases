@@ -88,6 +88,7 @@ GEM
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dotenv (3.1.7)
     erubi (1.12.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
@@ -255,6 +256,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  dotenv
   faker
   honeybadger (~> 5.2)
   image_processing (~> 1.2)
