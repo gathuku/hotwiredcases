@@ -8,7 +8,8 @@ servers:
 
 proxy:
   ssl: true
-  host: hotwiredcases.dev
+  host: new.hotwiredcases.dev
+  app_port: 3000
 
 registry:
   server: ghcr.io
