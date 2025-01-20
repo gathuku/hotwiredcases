@@ -1,6 +1,10 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
+  # TODO: Remove on rails 7.1
+  # get "up" => "rails/health#show", as: :rails_health_check
+  get "up" => "health_check#show", as: :rails_health_check
+
   root "home#index"
 
   resources :examples
