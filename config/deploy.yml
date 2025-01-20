@@ -24,24 +24,17 @@ env:
   clear:
     DB_HOST: hotwiredcases-postgres
   secret:
-    - RAILS_MASTER_KEY
-    - POSTGRES_PASSWORD
-    - POSTGRES_USER
+    - RAILS_MASTER_KEY 
 
-accessories:
-  postgres:
-    image: postgres:16
-    host: 159.223.239.141
-    port: "127.0.0.1:5432:5432"
-    env:
-      clear:
-        POSTGRES_USER: "hotwiredcases"
-        POSTGRES_DB: "hotwiredcases_production"
-      secret:
-        - POSTGRES_PASSWORD
-        - POSTGRES_USER
-    files:
-      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-    directories:
-      - data:/var/lib/postgresql/data
-      
+volumes:
+  - "railsstats_storage:/rails/storage"
+
+asset_path: /rails/public/assets
+
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+
