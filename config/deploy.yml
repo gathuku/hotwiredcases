@@ -8,7 +8,7 @@ servers:
 
 proxy:
   ssl: true
-  host: new.hotwiredcases.dev
+  host: hotwiredcases.dev
   app_port: 3000
 
 registry:
