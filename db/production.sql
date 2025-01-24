@@ -1,0 +1,5 @@
+CREATE DATABASE hotwiredcases_production;
+CREATE DATABASE hotwiredcases_production_cache;
+CREATE DATABASE hotwiredcases_production_queue;
+CREATE DATABASE hotwiredcases_production_cable;
+

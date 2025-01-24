@@ -1,0 +1,40 @@
+service: hotwiredcases
+
+image: gathuku/hotwiredcases
+
+servers:
+  web:
+    - 159.223.239.141
+
+proxy:
+  ssl: true
+  host: hotwiredcases.dev
+  app_port: 3000
+
+registry:
+  server: ghcr.io
+  username: gathuku
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+
+env:
+  clear:
+    DB_HOST: hotwiredcases-postgres
+  secret:
+    - RAILS_MASTER_KEY 
+
+volumes:
+  - "railsstats_storage:/rails/storage"
+
+asset_path: /rails/public/assets
+
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+
