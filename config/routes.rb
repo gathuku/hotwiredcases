@@ -59,4 +59,8 @@ Rails.application.routes.draw do
     # Turbo-frame nested attributes
     resources :orders, only: [:new, :create]
   end
+
+  namespace :e8 do
+    resources :orders, only: [:index, :show]
+  end
 end
