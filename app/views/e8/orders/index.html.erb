@@ -1,5 +1,7 @@
-<div class="font-black text-center text-7xl">
-  <%= turbo_frame_tag :orders, src: e8_order_path(0), loading: :lazy, data: { controller: :frame } do %>
-    <%= Time.current.to_i %>
-  <% end %>
-</div>
+<%= turbo_frame_tag :orders, src: e8_order_path(0), loading: :lazy, data: { controller: :frame } do %>
+  <div class="space-y-3 text-3xl font-extrabold text-center">
+    <div><%= Time.current.to_i %></div>
+    <div><%= Time.current.to_i %></div>
+    <div><%= Time.current.to_i %></div>
+  </div>
+<% end %>
