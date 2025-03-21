@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  resources :services, only: [:index]
   resources :examples
   resources :subscribers, only: [:create] do
     resource :confirmation, only: [:show], controller: :subscriber_confirmations
