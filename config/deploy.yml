@@ -4,7 +4,7 @@ image: gathuku/hotwiredcases
 
 servers:
   web:
-    - 159.223.239.141
+    - 164.90.198.30
 
 proxy:
   ssl: true
