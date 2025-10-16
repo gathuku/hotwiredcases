@@ -8,6 +8,6 @@ class Product < ApplicationRecord
   scope :search, -> (query) do
     return if query.blank?
 
-    where("name ILIKE ?", "%#{query}%")
+    where("name LIKE ?", "%#{query}%")
   end
 end
